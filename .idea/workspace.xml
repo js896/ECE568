@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4559cadc-0059-406d-9ef5-e5945bc0fe8d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/final_proj/erss-final-js896-yz579/world_amazon.proto.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj1/forked/erss-hwk1-zq33-js896/web-app/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/proj1/forked/erss-hwk1-zq33-js896/web-app/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj1/forked/erss-hwk1-zq33-js896/web-app/hw1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/proj1/forked/erss-hwk1-zq33-js896/web-app/hw1/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj1/forked/erss-hwk1-zq33-js896/web-app/request/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/proj1/forked/erss-hwk1-zq33-js896/web-app/request/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj1/forked/erss-hwk1-zq33-js896/web-app/request/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/proj1/forked/erss-hwk1-zq33-js896/web-app/request/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj1/forked/erss-hwk1-zq33-js896/web-app/welcomes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/proj1/forked/erss-hwk1-zq33-js896/web-app/welcomes/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj3/erss-hwk1-yl646-ym153/docker-deploy/web-app/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/proj3/erss-hwk1-yl646-ym153/docker-deploy/web-app/mysite/settings.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/final_proj/erss-final-js896-yz579" />
+  </component>
+  <component name="ProjectId" id="1ah4mZTXUIZQJSoRITugk2AcKgA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/final_proj" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4559cadc-0059-406d-9ef5-e5945bc0fe8d" name="Default Changelist" comment="" />
+      <created>1587174650732</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587174650732</updated>
+      <workItem from="1587174654201" duration="23000" />
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="773" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1587174677521">
+      <screen x="61" y="27" width="1859" height="1053" />
+    </state>
+    <state x="773" y="311" width="424" height="491" key="FileChooserDialogImpl/61.27.1859.1053@61.27.1859.1053" timestamp="1587174677521" />
+  </component>
+</project>

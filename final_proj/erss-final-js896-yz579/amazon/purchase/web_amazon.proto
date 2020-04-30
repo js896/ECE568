@@ -1,0 +1,28 @@
+syntax = "proto2";
+message Purchase{
+  required int64 productid = 1;
+  required string description = 2;
+  required int32 count = 3;
+  required string username = 4;
+  required int32 packageid = 5;
+  required int64 x = 6;
+  required int64 y = 7;
+}
+
+message Query{
+  required int64 packageid = 1;
+}
+
+message Status{
+  required int64 packageid = 1;
+  required string status = 2; 
+}
+
+message Cmd {
+  repeated Purchase buy = 1;
+  repeated Query queries = 2;
+}
+
+message Resp {
+  repeated Status pkgstatus = 2;
+}

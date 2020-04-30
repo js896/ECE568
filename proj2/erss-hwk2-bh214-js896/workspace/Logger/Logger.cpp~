@@ -1,0 +1,39 @@
+#include "Logger.h"
+
+#include <cstdlib>
+
+void Logger::write_to_file(std::vector<char> inp, std::string path) {
+  //  mtx.lock();
+  std::cout << inp[0] << std::endl;
+  std::fstream logger;
+  logger.open(path, std::fstream::app);
+  for (size_t i = 0; i < inp.size(); ++i) {
+    logger << inp[i];
+  }
+  logger << std::endl;
+  logger.close();
+  //  mtx.unlock();
+}
+
+// int main() {
+//   std::vector<char> test1;
+//   test1.push_back('1');
+//   test1.push_back('2');
+//   test1.push_back('3');
+//   std::vector<char> test2;
+//   test2.push_back('4');
+//   test2.push_back('5');
+//   test2.push_back('6');
+//   test2.push_back('\0');
+//   std::vector<char> test3;
+//   test3.push_back('7');
+//   test3.push_back('8');
+//   test3.push_back('9');
+//   std::thread t1(write_to_file, test2, "logger.txt");
+//   std::thread t2(write_to_file, test3, "logger.txt");
+//   t1.join();
+//   t2.join();
+//   write_to_file(test1, "logger.txt");
+
+//   return EXIT_SUCCESS;
+// }

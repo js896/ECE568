@@ -1,0 +1,33 @@
+{% extends 'base.html' %}<br>
+
+{% block content %}
+<h1><center>Driver Profile</center></center></h1>
+<table class="table table-dark">
+  <tbody>
+    <tr>
+      <th scope="row">FullName</th>
+      <td>{{ object.fullName }}</td>
+    </tr>
+    <tr>
+      <th scope="row">License</th>
+      <td>{{ object.carNum }}</td>
+    </tr>
+    <tr>
+      <th scope="row Time">Vehicle Type</th>
+      <td>{{ object.vehicleType }}</td>
+    </tr>
+  <tr>
+      <th scope="row">Vehicle Capacity</th>
+      <td>{{ object.vehicleCapacity }}</td>
+  </tr>
+  <tr>
+      <th scope="row">Satisfied Request</th>
+      <td>{{ object.satisfiedRequest }}</td>
+  </tr>
+  <tr>
+      <th scope="row">User</th>
+      <td>{{ object.user }}</td>
+  </tr>
+  </tbody>
+</table>
+{% endblock %}

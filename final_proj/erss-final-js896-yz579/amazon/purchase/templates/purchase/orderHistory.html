@@ -1,0 +1,13 @@
+{% extends "purchase/base.html" %}
+
+{% block content %}
+<h2>Order History:</h2>
+{% for history in historis %}
+<p>product name:{{ history.product.name }}</p>
+<p>how many you buy: {{ history.count }}</p>
+<p>product status:  {{ history.status }}</p>
+<p>Your delivery address(x,y) coordinates are: ({{ history.x }}, {{ history.y }})  </p>
+<!-- <p>product status:{{ history.status }}</p> -->
+<br>
+{% endfor %}
+{% endblock content %}

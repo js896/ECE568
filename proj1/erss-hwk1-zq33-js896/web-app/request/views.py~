@@ -1,0 +1,58 @@
+from django.urls import reverse
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+
+from django.views.generic import (
+    CreateView,
+    DetailView,
+    ListView,
+    UpdateView,
+    ListView,
+    DeleteView
+)
+
+from .forms import OrderModelForm
+from .models import Order
+
+# Create your views here.                                          
+
+class OrderCreateView(LoginRequiredMixin, CreateView):
+    template_name = 'order/request_create.html'
+    form_class = OrderModelForm
+    queryset = Order.objects.all()
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
+
+class OrderListView(ListView):
+    template_name = 'order/request_list.html'
+    #queryset = Order.objects.filter(owner = self.request.user)
+    queryset = Order.objects.all()
+    
+class OrderDetailView(DetailView):
+    template_name = 'order/request_detail.html'
+    queryset = Order.objects.all()
+
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Order, id = id_)
+
+class OrderUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    template_name = 'order/request_create.html'
+    form_class = OrderModelForm
+    queryset = Order.objects.all()
+
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Order, id = id_)
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.owner:
+            return True
+        return False

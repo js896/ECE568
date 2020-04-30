@@ -1,0 +1,38 @@
+{% extends "purchase/base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+
+  <div class="jumbotron">
+  <h1 class="display-3">Welcome to MiniAmazon</h1>
+  <p class="lead">You can search product, buy product, and check your order history.</p>
+  <hr class="my-4">
+  <p>Enjoy shopping!</p>
+  </div>
+
+  <h1>The Production List As Follows</h1>
+  <h2>Please click it to see the detail information</h2></br></br>
+  <ul>
+  {% for product in products %}
+  <li class="list-group-item user_link">
+  <div class="row">
+  <div class="float-left, col-1">
+    <svg class="bi bi-bag" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M14 5H2v9a1 1 0 001 1h10a1 1 0 001-1V5zM1 4v10a2 2 0 002 2h10a2 2 0 002-2V4H1z" clip-rule="evenodd"/>
+      <path d="M8 1.5A2.5 2.5 0 005.5 4h-1a3.5 3.5 0 117 0h-1A2.5 2.5 0 008 1.5z"/>
+    </svg>
+  </div>
+  <div class="col-16">
+    <!-- <h2 class = "font-weight-bold，text-left">{{product.name }}</h2> -->
+    <a href="/detail/{{ product.id }}/">{{product.name }}</a>
+  </div>
+  </div>
+  </li>
+
+  {% endfor %}
+
+  </ul>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,35 @@
+#include "Response_Parser.h"
+
+#include "../Tools/String_Tools.h"
+
+#define LN_END "\r\n"
+#define KV_DLM ": "
+
+void Response_Parser::parse(std::unordered_map<std::string, std::string> & map,
+                            const std::vector<char> & response) {
+  std::string response_str(response.data());
+  std::vector<std::string> parts = String_Tools::split_str(response_str, LN_END);
+  for (size_t i = 0; i < parts.size(); ++i) {
+    if (parts[i].size() == 0) {
+      break;
+    }
+    if (parts[i].find(KV_DLM) != std::string::npos) {
+      std::string::size_type pos = parts[i].find(KV_DLM);
+      std::string key = parts[i].substr(0, pos);
+      std::string value = parts[i].substr(pos + 2);
+      map.insert(std::make_pair(key, value));
+    }
+  }
+}
+
+int main() {
+  std::string test = "HTTP/1.0 200 OK\r\nContent-Type: text/plain\r\nTransfer-Encoding: "
+                     "chunked\r\nTrailer: Expires\r\n7\r\nMozilla\r\n\r\n";
+  std::vector<char> test_vector;
+  std::unordered_map<std::string, std::string> & map;
+  String_Tools::load_into_vector(test_vector, test);
+  Response_Parser::parse(map, test_vector);
+  for (auto it : map) {
+    std::cout << it.first << ": " << it.second << std::endl;
+  }
+}

@@ -1,0 +1,11 @@
+{% extends "purchase/base.html" %}
+
+{% block content %}
+<h2> You have log out, thanks for using.</h2>
+<div>
+    <midium class="pt-3">
+       <a class="ml-2" href="{% url 'login' %}">Log in again?</a>
+    </midium>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,4 @@
+Exception Guarantee
+Our Tunnel class has strong exception guarantee, because there are no side effects when an exception is thrown.
+It will throw select_exception when select() function mulfunctions.
+It will throw foward

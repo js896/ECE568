@@ -1,0 +1,6 @@
+CC=g++
+CFLAGS=-O0 -ggdb -g -Werror -Wall -pedantic -fPIC
+
+Logger: Logger.cpp 
+	$(CC) $(CFLAGS) -o $@ $<
+

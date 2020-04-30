@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method = 'POST'>{% csrf_token %}
+  <h1>Do you want to join this order?</h1>
+  <p><input type = 'submit' value = 'Yes' /> <a href='http://vcm-12399.vm.duke.edu:8000/request/sharer/lookup'>Cancel</a></p>
+</form>
+{% endblock %}

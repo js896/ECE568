@@ -1,0 +1,17 @@
+from django.urls import path
+from .views import(
+    #ArticleDeleteView,
+    #ArticleUpdateView,
+    OrderCreateView,
+    OrderDetailView,
+    OrderListView
+)
+
+app_name = 'orders'
+urlpatterns = [
+    path('', OrderListView.as_view(), name='order-list'),
+    path('<int:id>/', OrderDetailView.as_view(), name='order-detail'),
+    path('create/', OrderCreateView.as_view(), name='order-create'),
+    #path('<int:id>/update/', ArticleUpdateView.as_view(), name='article-update'),
+    #path('<int:id>/delete/', ArticleDeleteView.as_view(), name='article-delete'),
+]

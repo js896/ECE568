@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1><center>Order Information</center></h1>
+<table class="table table-dark">
+  <tbody>
+  <tr>
+      <th scope="row">Owner</th>
+      <td>{{ object.ownerName }}</td>
+  </tr>
+    <tr>
+      <th scope="row">Startpoint</th>
+      <td>{{ object.startpoint }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Destination</th>
+      <td>{{ object.destination }}</td>
+    </tr>
+    <tr>
+      <th scope="row Time">Arrival Time</th>
+      <td>{{ object.requiredArrival }}</td>
+    </tr>
+  <tr>
+      <th scope="row">Passenger Amount</th>
+      <td>{{ object.numPassengers }}</td>
+  </tr>
+  <tr>
+      <th scope="row">Status</th>
+      <td>{{ object.status }}</td>
+  </tr>
+  <tr>
+      <th scope="row">Special Request</th>
+      <td>{{ object.specialRequest }}</td>
+  </tr>
+  <tr>
+      <th scope="row">Sharer</th>
+      <td>{{ object.sharerName }}</td>
+  </tr>
+  </tbody>
+</table>
+{% if object.status == 'non-confirmed' %}
+<a href="{% url 'orders:order-driver-orderConfirm' orderID%}"><center>Confirm this Order</center></a>
+{% elif object.status == 'confirmed'%}
+<a href="{% url 'orders:order-driver-orderComplete' orderID%}"><center>Complete this Order</center></a>
+{% endif %}
+
+{% endblock %}

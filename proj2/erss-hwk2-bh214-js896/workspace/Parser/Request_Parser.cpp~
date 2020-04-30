@@ -1,0 +1,215 @@
+#include "Request_Parser.h"
+
+#include <stdlib.h>
+#include <string.h>
+
+#include <iostream>
+#include <unordered_map>
+
+#include "../Exceptions/Parser_Exceptions.h"
+#include "../global_settings.h"
+#define LN_END "\r\n"  // ending of each line in a request
+#define LN_DLM " "     // delimiter in each line
+
+void Request_Parser::parse(std::unordered_map<std::string, std::string> & map,
+                           const std::string & request) {
+  std::string ln_end(LN_END);
+
+  // get line1
+  std::string::size_type line1_start = 0;
+  std::string::size_type line1_end = whereis(ln_end, request);
+  if (line1_start >= line1_end) {
+    throw new get_line1_exception;
+  }
+  std::string::size_type line1_len = line1_end - line1_start;
+  std::string line1 = request.substr(line1_start, line1_len);
+  // parse line1
+  parse_line1(map, line1);
+
+  // get header
+  std::string::size_type header_start = line1_end + ln_end.length();
+  std::string::size_type header_end = header_start;
+  std::string::size_type body_start = header_start;
+  if (header_start >= request.length()) {  // no more content
+    std::cout << "Request only has line1\n";
+    return;
+  }
+  std::string header_and_body = request.substr(header_start);
+  // parse header: there might not be a header
+  try {
+    header_end = parse_header(map, header_and_body);
+    body_start = header_end + 2 * ln_end.length();
+  }
+  catch (get_header_exception * e) {
+    std::cout << e->what() << "\n";
+    body_start += ln_end.length();
+  }
+
+  // get body
+  if (body_start >= request.length()) {
+    std::cout << "Request does not have a body\n";
+    return;
+  }
+  std::string body = request.substr(body_start);
+  parse_body(map, body);
+}
+
+void Request_Parser::parse_line1(std::unordered_map<std::string, std::string> & map,
+                                 const std::string & line1) {
+  std::string ln_dlm(LN_DLM);
+
+  // get command
+  std::string::size_type command_start = 0;
+  std::string::size_type command_end = whereis(ln_dlm, line1);
+  if (command_end <= command_start) {
+    throw new get_command_exception;
+  }
+  std::string::size_type command_len = command_end - command_start;
+  std::string command = line1.substr(command_start, command_len);
+  // put command into map
+  map.insert(std::make_pair("command", command));
+
+  // get uri
+  std::string::size_type uri_start = command_end + ln_dlm.length();
+  if (uri_start >= line1.length()) {
+    std::cout << "There is no uri & format in line1:" << line1 << "\n";
+    throw new get_uri_exception;
+  }
+  std::string uri_and_format = line1.substr(uri_start);
+  std::string::size_type uri_end = whereis(ln_dlm, uri_and_format);
+  if (uri_end <= uri_start) {
+    std::cout << "There is no uri in line1:" << line1 << "\n";
+    throw new get_uri_exception;
+  }
+  std::string::size_type uri_len = uri_end - uri_start;
+  std::string uri = uri_and_format.substr(0, uri_len);
+  // parse uri into ip & port
+  parse_uri(map, uri);
+
+  // get protocol
+  std::string::size_type protocol_start = uri_end + ln_dlm.length();
+  if (protocol_start >= line1.length()) {
+    throw new get_protocol_exception;
+  }
+  std::string protocol = line1.substr(protocol_start);
+  // put protocol into map
+  map.insert(std::make_pair("protocol", protocol));
+}
+
+// general get port
+
+std::string::size_type len = uri.length();
+
+std::string uri_header = uri.substr(0, 4);
+std::string port;
+if (uri_header.compare("http") == 0) {  // http
+  port = get_http_port(uri);
+}
+else {  // https
+  port = get_https_port(uri);
+}
+return port;
+}
+
+// get port str from uri of http-format
+std::string Request_Parser_Ver1::get_http_port(std::string uri) {
+  if (uri.length() == 0) {
+    throw new parser_get_uri_exception(
+        "Parser failed to get HTTP port from uri: EMPTY uri");
+  }
+  return HTTP_PORT;
+}
+
+// get port str from uri of https_format
+std::string Request_Parser_Ver1::get_https_port(std::string uri) {
+  int len = uri.length();
+  if (len == 0) {
+    throw new parser_get_port_exception(
+        "Parser failed to get HTTPS port number from uri: EMPTY uri");
+  }
+  int port_end = len - 1;
+  int port_start = port_end;
+  for (; port_start >= 0; port_start--) {
+    if (uri[port_start] == ':') {
+      port_start++;  // set port_start index to the first port char
+      break;
+    }
+  }
+
+  int port_len = port_end - port_start + 1;
+  if (port_len <= 0) {
+    throw new parser_get_port_exception(
+        "Parser failed to get HTTPS port number from uri: " + uri);
+  }
+
+  std::string port = uri.substr(port_start, port_len);
+  return port;
+}
+
+std::string Request_Parser::get_https_ip(std::string & uri) {
+  std::string delimiter = ":";
+  int len;
+  if (uri.find(delimiter) == std::string::npos) {
+    throw new parser_get_https_ip_exception("Faild to get https ip from uri " + uri);
+  }
+  else {
+    len = uri.find(delimiter);
+  }
+  std::string https_ip = uri.substr(0, len);
+  return https_ip;
+}
+
+std::string Request_Parser_Ver1::get_http_ip(std::string uri) {
+  std::string delimiter = "://";
+  int len;
+  if (uri.find(delimiter) == std::string::npos) {
+    throw new parser_get_http_ip_exception("Failed to get http ip from uri " + uri);
+  }
+  else {
+    len = uri.find(delimiter);
+  }
+  std::string http_ip = uri.substr(len + 3);
+  return http_ip;
+}
+//get ip from request
+std::string Request_Parser_Ver1::get_ip(std::string request) {
+  std::string uri = get_uri(request);
+  std::string marker = "http://";
+  if (uri.find(marker) != std::string::npos) {
+    return get_http_ip(uri);
+  }
+  else {
+    return get_https_ip(uri);
+  }
+}
+
+//get command type
+std::string Request_Parser_Ver1::get_command(std::string request) {
+  std::string request_line = get_request_line(request);
+  int len;
+  std::string backaspece = " ";
+  if (request_line.find(backaspece) == std::string::npos) {
+    throw new parser_get_command_exception("Failed to get command from request line " +
+                                           request_line);
+  }
+  else {
+    len = request_line.find(backaspece);
+  }
+  return request_line.substr(0, len);
+}
+
+// find the end of a line (index before "\r\n")
+std::string::size_type Request_Parser::whereis(const std::string & target,
+                                               const std::string & str) {
+  std::string::size_type ans = str.find(target);
+
+  // no "\r\n" found in the given range
+  if (ans == std::string::npos) {
+    std::cout << "Cannot found target: \"" << target << "\" in the given string: \""
+              << str << "\"\n";
+    throw new str_not_find_exception();
+  }
+  else {  // find success
+    return ans;
+  }
+}

@@ -1,0 +1,5 @@
+01/23: We found that a customer could see other user's information by simply typing the corresponding URL, so we pair every order with a user, in this way the danger was prevented.
+
+01/25: We found that a evil customer might just want to see the order information by just typing the URL without logging in. So we make sure the user has to log in first. When the user tries to do that, he will be directed to the login page.
+
+01/26: When inputing order or driver information, the user might input something wrong. For example, in the passager blank, the user might input some characters. So we make some restrictions in the corresponding models.py to make sure the user is inputting the right format.

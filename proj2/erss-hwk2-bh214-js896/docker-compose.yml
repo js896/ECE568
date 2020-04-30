@@ -1,0 +1,21 @@
+
+version: '2'
+
+services:
+#  proxy-init:
+#      build: ./src
+#      command:
+#        bash -c "./init.sh"
+#      volumes:
+#        - ./src:/var/log/erss
+  receiver_test:
+      build: ./workspace
+      command: bash -c  "./test/receiver_test 12345"
+      volumes:
+        - ./workspace:/workspace
+        - ./logs:/var/log/erss
+      ports:
+        - "12345:12345"
+#      depends_on:
+#        - proxy-init
+      tty: true

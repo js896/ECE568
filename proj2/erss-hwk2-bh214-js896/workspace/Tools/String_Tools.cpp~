@@ -1,0 +1,32 @@
+#include "String_Tools.h"
+
+#include <iostream>
+
+#include "../Exceptions/String_Tools_Exceptions.h"
+
+std::vector<std::string> String_Tools::split_str(const std::string & delimiter,
+                                                 const std::string & str) {
+  std::string::size_type str_len = str.length();
+
+  std::vector<std::string> parts;
+  std::string::size_type start = 0;
+  std::string::size_type end = start;
+  do {
+    end = str.find(delimiter, start);
+    std::string part;
+    if (end == std::string::npos) {
+      if (start + 1 <= str_len) {
+        part = str.substr(start, str_len - start);
+        parts.push_back(part);
+      }
+      return parts;
+    }
+    else {
+      part = str.substr(start, end - start);
+      parts.push_back(part);
+    }
+    start = end + 1;
+  } while (start + 1 <= str_len);
+
+  return parts;
+}

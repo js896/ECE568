@@ -1,0 +1,23 @@
+#ifndef HANDLER
+#define HANDLER
+#include "../Message/Request_Message.h"
+#include "../Socket/Proxy_Socket.h"
+#include "../Socket/Socket_Ver1.h"
+#include "../global_settings.h"
+
+class Handler {
+ private:
+  Proxy_Socket * mainSocket;
+  static void hd_connect(Proxy_Socket * child);
+  static void hd_post(const Request_Message & msg, const std::string & recv);
+  static void hd_get(const Request_Message & msg, const std::string & recv);
+
+ public:
+  Handler(const std::string & port);
+
+  void run();
+
+  static void thread_handler(Proxy_Socket * childSocket);
+};
+
+#endif

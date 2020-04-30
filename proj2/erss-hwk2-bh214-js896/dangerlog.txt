@@ -1,0 +1,40 @@
+**Part1**
+Exception Guarantee
+
+Our Tunnel class has strong exception guarantee, because there are no side effects when an exception is thrown.
+It will throw select_exception when select() function mulfunctions.
+It will throw foward_to_client_exception when Tunnel failed to forward server's message to client.
+It will throw forward_to_server_exception when Tunnel failed to forward client's message to server.
+
+Our String_Tools class has strong exception guarantee, because there are no side effects when an exception is thrown.
+It will throw str_not_find_exception when cannot find the position of the requested string.
+
+Our LRU_Cache class has strong exception guarantee, because there are no side effects when an exception si thrown.
+It will throw cache_not_found_exception when cannot find the required node in the cache.
+
+Our Response_Parser class and Request_Parser class have strong exception guarantee, because there are no side effects when an exception is thrown.
+It will throw get_line1_exception when failed to get the first line from the request.
+It will throw get_header_exception when Parser failed to get header from the request.
+It will throw get_body_exception when Parser failed to get body from the request.
+It will throw get_uri_exception when when Parser failed to get uri from the request.
+It will throw get_ip_port exception when when Parser failed to get ip and port info from the request.
+It will throw get_method_exception when Parser failed to get method from the first line of request.
+It will throw parse_request_exception when Parser failed to parse received request.
+It will throw header_line_format_exception when the required line in the header has wrong format.
+
+Our Proxy_Socket class and Socket_Ver1 class has strong exception guarantee, because there are no side effects when an exception.
+It will throw get_addrinfo_exception when getaddrinfo() mulfunctions.
+It will throw get_socket_port_exception when we cannot get the socket port number.
+It will throw connection_break_exception when something broke our socket connection.
+It will throw connect_to_exception when socket cannot connect to required ip and port.
+It will throw recv_str_exception when socket failed to receive string.
+It will throw send_str_exception when socket failed to send the string to the ip and port.
+It will throw socket_listener_exception when socket cannot start listening.
+It will throw socket_accept_exception when socket cannot accept upcoming connection.
+It will throw socket_bind_exception when cannot bind the socket to the ip and port.
+
+Our Handler class has no throw exception guarantee, because all exceptions will be catched.
+
+**Part2**
+How the LRU_Cache was implemented.
+The top level of the cache is a doubly linked list and an unordered map. The unordered map was used to access nodes of the linked list within 0(1). And every node is also a linked list, we designed the node this way in order to handle chunked data from the server. We can access each node of the inner linked list because the outter linked list has fields to keep track of the head and tail of the inner linked list.

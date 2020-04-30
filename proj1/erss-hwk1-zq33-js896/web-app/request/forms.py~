@@ -1,0 +1,18 @@
+from django import forms
+
+from .models import Order
+
+class OrderModelForm(forms.ModelForm):
+
+    class Meta:
+        model = Order
+        fields = [
+            'startpoint',
+            'destination',
+            'starttime',
+        ]
+
+class RawOrderForm(forms.Form):
+    startpoint = forms.CharField()
+    destination = forms.CharField()
+    starttime = forms.CharField()

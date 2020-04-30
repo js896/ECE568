@@ -1,0 +1,20 @@
+
+version: '2'
+
+services:
+#  proxy-init:
+#      build: ./src
+#      command:
+#        bash -c "./init.sh"
+#      volumes:
+#        - ./src:/var/log/erss
+  receiver_test:
+      build: ./erss-hwk2-bh214-js896
+      command: bash -c  "./receiver_test 12345"
+      volumes:
+        - ./erss-hwk2-bh214-js896:/var/log/erss
+      ports:
+        - "12345:12345"
+#      depends_on:
+#        - proxy-init
+      tty: true

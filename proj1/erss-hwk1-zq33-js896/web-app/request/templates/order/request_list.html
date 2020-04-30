@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1><center>Orders</center></h1>
+<table class="table table-sm table-dark">
+  <thead>
+    <tr>
+        <th scope="col">Start</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Arrival Time</th>
+        <th scope="col">Status</th>
+        <th scope="col">Detail</th>
+    </tr>
+  </thead>
+  <tbody>
+        {% for instance in object_list %}
+            <tr>
+            <td>{{instance.startpoint}}</td>
+            <td>{{instance.destination}}</td>
+            <td>{{instance.requiredArrival}}</td>
+            <td>{{instance.status}}</td>
+            <td><a href='{{ instance.get_absolute_url }}'>detail</a></td>
+            </tr>
+        {% endfor %}
+  </tbody>
+</table>
+
+<a href="{%url 'orders:order-create'%}"><center>Create A New Order</center></a>
+<a href="{%url 'orders:order-sharer-lookup'%}"><center>Join An Order</center></a>
+
+{% endblock %}

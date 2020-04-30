@@ -1,0 +1,15 @@
+{% extends "purchase/base.html" %}
+
+{% block content %}
+<form method="POST">
+{% csrf_token %}
+<fieldset class="form-group">
+    <legend class="mb-4">Write a review</legend>
+    {{ form.as_p }}
+</fieldset>
+<div class="form-group">
+    <button class="btn btn-outline-info" type="submit">submit</button>
+</div>
+</form>
+<br><br>
+{% endblock content %}

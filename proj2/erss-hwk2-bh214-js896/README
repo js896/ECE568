@@ -1,0 +1,120 @@
+**Part 1**
+How to run the proxy:
+git clone https://gitlab.oit.duke.edu/bh214/erss-hwk2-bh214-js896.git
+cd erss-hwk2-bh214-js896
+sudo docker-compose up
+
+**Part 2**
+Infrastructure of our poject:
+.
+├── dangerlog.txt
+├── dangerlog.txt~
+├── docker-compose.yml
+├── docker-compose.yml~
+├── hw2_requirements.xlsx
+├── logs
+│   └── proxy.log
+└── workspace
+    ├── Dockerfile
+    ├── Exceptions
+    │   ├── Cache_Exceptions.h
+    │   ├── Cache_Exceptions.h~
+    │   ├── Parser_Exceptions.h
+    │   ├── Socket_Exceptions.h
+    │   ├── String_Tools_Exceptions.h
+    │   ├── String_Tools_Exceptions.h~
+    │   └── Tunnel_Exceptions.h
+    ├── global_settings.h
+    ├── Handler
+    │   ├── Handler.cpp
+    │   ├── Handler.cpp~
+    │   ├── Handler.h
+    │   └── Handler.h~
+    ├── Logger
+    │   ├── Logger.cpp
+    │   ├── Logger.cpp~
+    │   ├── Logger.h
+    │   ├── Logger.h~
+    │   ├── logger.txt
+    │   ├── logger.txt~
+    │   ├── Makefile
+    │   └── Makefile~
+    ├── LRU_Cache
+    │   ├── Cache_Node.cpp
+    │   ├── Cache_Node.h
+    │   ├── LRUCache
+    │   ├── LRU_Cache.cpp
+    │   ├── LRU_Cache.cpp~
+    │   ├── LRU_Cache.h
+    │   ├── LRU_Cache.h~
+    │   ├── Makefile
+    │   ├── Resource_Block.cpp
+    │   ├── Resource_Block.h
+    │   └── test_cache.cpp
+    ├── Message
+    │   ├── Request_Message.cpp
+    │   ├── Request_Message.cpp~
+    │   └── Request_Message.h
+    ├── Parser
+    │   ├── Makefile
+    │   ├── Makefile~
+    │   ├── Request_Parser.cpp
+    │   ├── Request_Parser.cpp~
+    │   ├── Request_Parser.h
+    │   ├── Response_Parser
+    │   ├── Response_Parser.cpp
+    │   ├── Response_Parser.cpp~
+    │   ├── Response_Parser.h
+    │   └── Response_Parser.h~
+    ├── proxy.log
+    ├── requirements.txt
+    ├── Socket
+    │   ├── Proxy_Socket.h
+    │   ├── Socket_Ver1.cpp
+    │   └── Socket_Ver1.h
+    ├── test
+    │   ├── Cache_Node.o
+    │   ├── cache_test
+    │   ├── cache_test.cpp
+    │   ├── Handler.o
+    │   ├── Logger.o
+    │   ├── LRU_Cache.o
+    │   ├── Makefile
+    │   ├── receiver_test
+    │   ├── Request_Message.o
+    │   ├── Request_Parser.o
+    │   ├── Request_Parser_test_connect
+    │   ├── Request_Parser_test_connect.cpp
+    │   ├── Request_Parser_test_get
+    │   ├── Request_Parser_test_get.cpp
+    │   ├── Request_Parser_test_post
+    │   ├── Request_Parser_test_post.cpp
+    │   ├── Resource_Block.o
+    │   ├── Response_Parser.o
+    │   ├── Response_Parser_test
+    │   ├── Response_Parser_test.cpp
+    │   ├── sender_test
+    │   ├── Socket_Ver1.o
+    │   ├── String_Tools.o
+    │   ├── str_split_test
+    │   ├── str_split_test.cpp
+    │   ├── test_find_int_after
+    │   ├── test_find_int_after.cpp
+    │   ├── test_recv.cpp
+    │   ├── test_recv.o
+    │   ├── test_rqs_to_time_t
+    │   ├── test_rqs_to_time_t.cpp
+    │   ├── test_rqs_to_tm
+    │   ├── test_rqs_to_tm.cpp
+    │   └── Tunnel_Ver1.o
+    ├── Tools
+    │   ├── String_Tools.cpp
+    │   ├── String_Tools.cpp~
+    │   ├── String_Tools.h
+    │   └── String_Tools.h~
+    └── Tunnel
+        ├── Tunnel.h
+        ├── Tunnel.h~
+        ├── Tunnel_Ver1.cpp
+        ├── Tunnel_Ver1.h
+        └── Tunnel_Ver1.h~

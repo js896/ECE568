@@ -1,0 +1,9 @@
+1. users can write reviews about any product, and users can see any reviews from other users.
+2. users can logout but can still view the production.
+3. in the production detail page, the user cannot writr a review if he does not login.
+4. in the production detail page, the user cannot buy things if he does not login.
+5. user can search product by name in the search bar
+6. the user can click "welcome to amazon " to go back to home page.
+7. the user can click "home " to go back to home page.
+8.  "welcome to amazon ","home " are in nav bar all the time.
+9. the nav bar content changes when user login and logout

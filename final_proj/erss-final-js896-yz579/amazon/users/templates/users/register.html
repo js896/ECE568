@@ -1,0 +1,23 @@
+{% extends "purchase/base.html" %}
+
+{% block content %}
+<div>
+   <form method="POST">
+       {% csrf_token %}
+       <fieldset class="form-group">
+           <legend class="mb-4">Please create an account.</legend>
+           {{ form.as_p}}
+       </fieldset>
+
+       <div class="form-group">
+           <button class="btn btn-outline-info" type="submit">Sign Up</button>
+       </div>
+    </form>
+ </div>
+ <div class="pt-3">
+     <midium class="text-muted">
+         Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+     </midium>
+ </div>
+
+{% endblock content %}

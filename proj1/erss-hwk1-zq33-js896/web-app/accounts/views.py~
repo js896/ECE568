@@ -1,0 +1,17 @@
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.models import User
+
+from .models import Account
+from .forms import AccountForm, RawAccountForm
+
+# Create your views here.
+def Account_create_view(request):
+    form = AccountForm(request.POST or None)
+    if form.is_valid():
+        print(form.userName)
+        form = AccountForm()
+
+    context = {
+        'form': form
+    }
+    return render(request, "account/account_create.html", context)

@@ -1,0 +1,289 @@
+0: "CONNECT www.youtube.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:42 2020
+
+1: "CONNECT firefox.settings.services.mozilla.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:42 2020
+
+2: "POST http://ocsp.pki.goog/gts1o1 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:42 2020
+
+2: not in cache
+
+2: Requesting "POST http://ocsp.pki.goog/gts1o1 HTTP/1.1" from 172.217.4.67
+
+2: Received "HTTP/1.1 200 OK" from 172.217.4.67
+
+2: cached, expire date time not specified
+
+3: "CONNECT i.ytimg.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:42 2020
+
+4: "CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:42 2020
+
+5: "POST http://ocsp.pki.goog/gts1o1 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:42 2020
+
+5: in cache, but expired at Sun Mar  1 01:47:42 2020
+
+
+5: Responding "HTTP/1.1 200 OK"
+
+6: "CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:42 2020
+
+7: "CONNECT snippets.cdn.mozilla.net:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:42 2020
+
+9: "POST http://ocsp.digicert.com/ HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:43 2020
+
+9: not in cache
+
+9: Requesting "POST http://ocsp.digicert.com/ HTTP/1.1" from 72.21.91.29
+
+9: Received "HTTP/1.1 200 OK" from 72.21.91.29
+
+9: cached, expires at Sun, 01 Mar 2020 18:59:51 GMT
+
+10: "CONNECT r4---sn-p5qlsndd.googlevideo.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:43 2020
+
+11: "CONNECT r4---sn-p5qlsndd.googlevideo.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:43 2020
+
+12: "POST http://ocsp.pki.goog/gts1o1 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:43 2020
+
+12: in cache, but expired at Sun Mar  1 01:47:42 2020
+
+
+12: Responding "HTTP/1.1 200 OK"
+
+13: "CONNECT r4---sn-p5qlsndd.googlevideo.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:43 2020
+
+14: "CONNECT googleads.g.doubleclick.net:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:43 2020
+
+15: "CONNECT static.doubleclick.net:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:43 2020
+
+16: "POST http://ocsp.pki.goog/gts1o1 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:44 2020
+
+16: in cache, but expired at Sun Mar  1 01:47:42 2020
+
+
+16: Responding "HTTP/1.1 200 OK"
+
+17: "POST http://ocsp.pki.goog/gts1o1 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:44 2020
+
+17: in cache, but expired at Sun Mar  1 01:47:42 2020
+
+
+17: Responding "HTTP/1.1 200 OK"
+
+18: "CONNECT yt3.ggpht.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:45 2020
+
+19: "CONNECT i1.ytimg.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:45 2020
+
+20: "POST http://ocsp.pki.goog/gts1o1 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:45 2020
+
+20: in cache, but expired at Sun Mar  1 01:47:42 2020
+
+
+20: Responding "HTTP/1.1 200 OK"
+
+22: "CONNECT pagead2.googlesyndication.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:46 2020
+
+23: "CONNECT r3---sn-p5qlsndk.googlevideo.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:46 2020
+
+24: "CONNECT r3---sn-p5qlsndk.googlevideo.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:46 2020
+
+25: "CONNECT www.gstatic.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:46 2020
+
+26: "CONNECT r1---sn-p5qlsndk.googlevideo.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:46 2020
+
+27: "POST http://ocsp.pki.goog/gts1o1 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:46 2020
+
+27: in cache, but expired at Sun Mar  1 01:47:42 2020
+
+
+27: Responding "HTTP/1.1 200 OK"
+
+28: "CONNECT r1---sn-p5qlsndk.googlevideo.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:46 2020
+
+30: "CONNECT www.gstatic.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:49 2020
+
+31: "CONNECT fonts.gstatic.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:49 2020
+
+32: "CONNECT s.ytimg.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:49 2020
+
+33: "CONNECT r3---sn-vgqsknls.googlevideo.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:50 2020
+
+29: "POST http://ocsp.pki.goog/gts1o1 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:50 2020
+
+29: in cache, but expired at Sun Mar  1 01:47:42 2020
+
+
+29: Responding "HTTP/1.1 200 OK"
+
+34: "CONNECT r3---sn-vgqsknls.googlevideo.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:50 2020
+
+35: "CONNECT www.reddit.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:47:58 2020
+
+36: "CONNECT www.redditstatic.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:48:00 2020
+
+37: "CONNECT www.redditstatic.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:48:00 2020
+
+38: "CONNECT www.redditstatic.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:48:00 2020
+
+40: "CONNECT preview.redd.it:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:48:00 2020
+
+41: "CONNECT preview.redd.it:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:48:00 2020
+
+42: "CONNECT preview.redd.it:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:48:00 2020
+
+39: "CONNECT styles.redditmedia.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:48:00 2020
+
+43: "CONNECT external-preview.redd.it:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:48:00 2020
+
+44: "CONNECT b.thumbs.redditmedia.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:48:00 2020
+
+45: "CONNECT www.redditstatic.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:48:00 2020
+
+46: "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:49:11 2020
+
+46: not in cache
+
+46: Requesting "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 191.236.16.125
+
+46: Received "HTTP/1.1 200 OK" from 191.236.16.125
+
+46: not cacheable because Response has "no-store"
+
+47: "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:49:16 2020
+
+47: not in cache
+
+47: Requesting "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 191.236.16.125
+
+47: Received "HTTP/1.1 200 OK" from 191.236.16.125
+
+47: not cacheable because Response has "no-store"
+
+48: "CONNECT tools.ietf.org:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:49:36 2020
+
+49: "POST http://ocsp.starfieldtech.com/ HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 01:49:36 2020
+
+49: not in cache
+
+49: Requesting "POST http://ocsp.starfieldtech.com/ HTTP/1.1" from 192.124.249.24
+
+49: Received "HTTP/1.1 200 OK" from 192.124.249.24
+
+49: cached, but requires re-validation
+
+2: "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:02:09 2020
+
+2: not in cache
+
+2: Requesting "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 191.236.16.125
+
+2: Received "HTTP/1.1 200 OK" from 191.236.16.125
+
+2: not cacheable because Response has "no-store"
+
+3: "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:02:15 2020
+
+3: not in cache
+
+3: Requesting "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 191.236.16.125
+
+3: Received "HTTP/1.1 200 OK" from 191.236.16.125
+
+3: not cacheable because Response has "no-store"
+
+4: "CONNECT www.youtube.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:02:21 2020
+
+5: "CONNECT i.ytimg.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:02:21 2020
+
+8: "CONNECT yt3.ggpht.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:02:31 2020
+
+6: "CONNECT www.gstatic.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:02:31 2020
+
+9: "CONNECT googleads.g.doubleclick.net:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:02:32 2020
+
+10: "CONNECT www.google.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:02:32 2020
+
+11: "POST http://ocsp.pki.goog/gts1o1 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:02:32 2020
+
+11: not in cache
+
+11: Requesting "POST http://ocsp.pki.goog/gts1o1 HTTP/1.1" from 172.217.4.67
+
+11: Received "HTTP/1.1 200 OK" from 172.217.4.67
+
+11: cached, expire date time not specified
+
+0: "CONNECT i.ytimg.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:33:31 2020
+
+1: "CONNECT i.ytimg.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:33:31 2020
+
+2: "CONNECT www.youtube.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:33:31 2020
+
+3: "CONNECT i.ytimg.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:33:38 2020
+
+4: "CONNECT i.ytimg.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:33:38 2020
+
+5: "POST http://ocsp.pki.goog/gts1o1 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:33:38 2020
+
+5: not in cache
+
+5: Requesting "POST http://ocsp.pki.goog/gts1o1 HTTP/1.1" from 172.217.4.67
+
+5: Received "HTTP/1.1 200 OK" from 172.217.4.67
+
+5: cached, expire date time not specified
+
+0: "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:38:21 2020
+
+0: not in cache
+
+0: Requesting "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 191.236.16.125
+
+0: Received "HTTP/1.1 200 OK" from 191.236.16.125
+
+0: not cacheable because Response has "no-store"
+
+1: "CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:38:28 2020
+
+2: "CONNECT www.youtube.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:38:28 2020
+
+3: "CONNECT i.ytimg.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:38:29 2020
+
+0: "CONNECT www.youtube.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:40:41 2020
+
+1: "CONNECT i.ytimg.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:40:42 2020
+
+2: "CONNECT yt3.ggpht.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:40:43 2020
+
+3: "CONNECT www.gstatic.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:40:43 2020
+
+4: "POST http://ocsp.pki.goog/gts1o1 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:40:43 2020
+
+4: not in cache
+
+4: Requesting "POST http://ocsp.pki.goog/gts1o1 HTTP/1.1" from 172.217.4.67
+
+4: Received "HTTP/1.1 200 OK" from 172.217.4.67
+
+4: cached, expire date time not specified
+
+6: "CONNECT googleads.g.doubleclick.net:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:40:43 2020
+
+8: "POST http://ocsp.pki.goog/gts1o1 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:40:44 2020
+
+8: in cache, but expired at Sun Mar  1 02:40:43 2020
+, and now is Sat Feb 29 02:40:44 2020
+
+
+8: Responding "HTTP/1.1 200 OK"
+
+9: "CONNECT www.google.com:443 HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:40:44 2020
+
+10: "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 152.3.43.43 @ Sat Feb 29 02:40:49 2020
+
+10: not in cache
+
+10: Requesting "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 191.236.16.125
+
+10: Received "HTTP/1.1 200 OK" from 191.236.16.125
+
+10: not cacheable because Response has "no-store"
+

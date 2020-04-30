@@ -1,0 +1,7 @@
+#include <string>
+#include <vector>
+class String_Tools {
+  // split a string according to delimiter
+  static std::vector<std::string> split_str(const std::string & delimiter,
+                                            const std::string & str);
+};

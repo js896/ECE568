@@ -1,0 +1,39 @@
+{% extends "purchase/base.html" %}
+
+{% block content %}
+
+<div class="container-fluid, m-auto ">
+  <h2>Product detail of {{product.name}}</h2>
+  <p>product id: {{product.id}}</p>
+  <p>product name: {{product.name}}</p>
+  <p>product deatil: {{product.description}}</p>
+
+  {% if user.is_authenticated %}
+    <form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+        <legend class="mb-4">Request a purchase</legend>
+        {{ form.as_p }}
+    </fieldset>
+    <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">Request</button>
+    </div>
+    </form>
+    <br/><br/>
+    <a class="btn btn-dark" href="/review/{{ product.id }}/">Click here to write a review for {{product.name }}</a>
+    <br/>
+  {% else %}
+    <br/>
+    <h2>please log in to make an order or write a review</h2><br/><br/>
+  {% endif %}
+
+    <h3>Reviews for this production:</h3>
+    {% for command in commands %}
+    <div class="border">
+      <p>{{ command.user.username }} :</p>
+      <p>{{ command.review }}</p>
+    </div>
+    <br>
+    {% endfor %}
+  </div>
+{% endblock content %}

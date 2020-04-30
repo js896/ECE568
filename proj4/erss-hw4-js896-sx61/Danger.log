@@ -1,0 +1,10 @@
+1. The server is run in a while loop, so it continuelly consume the CPU resources. In this way, it may lower the performance of the machine.
+
+2. The server is killed by signal, so there is a socket that is not closed.
+
+3. Since the client side is designed as multi-threads client, the client number may reach the limit of TCP accept number.
+
+4. It is possible to run multiple server at the same time, so the client side could send requests to the wrong server.
+
+5. The lower bound should be no larger than upper bound.
+
